@@ -1,0 +1,131 @@
+/* Colors
+#6441A4 - twitch purple
+#343D43 - darker
+#E0FBFC- white for text
+
+*/
+
+* {font-family: "Book Antiqua", Palatino, "Palatino Linotype", "Palatino LT STD", Georgia, serif;
+}
+
+body{
+  background-color: #343D43;
+}
+
+#content{
+  margin: auto;
+  width: 800px;
+}
+
+#search{
+  width: 300px;
+  height: 50px;
+}
+
+#search-container{
+  width:300px;
+  vertical-align: middle;
+  white-space: nowrap;
+  position: relative;
+}
+
+#search-container input{
+  width:300px;
+  height: 50px;
+  background: #2b303b;
+  border:none;
+  font-size: 15pt;
+  float:left;
+  color: #63717f;
+  padding-left: 45px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius:  5px;
+  border-radius: 5px;
+  
+  -webkit-transition: background .55s ease;
+  -moz-transition: background .55s ease;
+  -ms-transition:background .55s ease;
+  -o-transition: background .55s ease;
+  transition: background .55s ease;
+}
+
+#search-container input::-webkit-input-placeholder{
+  color: #65737e;
+}
+
+#search-container input:-moz-placeholder{
+  color: #65737e;
+}
+
+#search-container input::-moz-placeholder{
+  color: #65737e;
+}
+
+#search-container input:-ms-input-placeholder{
+  color: #65737e;
+}
+
+#search-container #icon{
+  position: absolute;
+  top: 50%;
+  margin-left: 17px;
+  margin-top: 17px;
+  z-index: 1;
+  color: #4f5b66;
+}
+
+#search-container input:hover, #search-container input:focus, #search-container input:active {
+  outline:none;
+  background: #ffffff;
+}
+
+#result-panel-fail {
+  background-color: #FF2020;
+  color: #E0FBFC;
+  padding:10px;
+  margin-top: 10px;
+}
+
+#header-container{
+  padding-left: 10px;
+  margin-top: 10px;
+  background-color: #6441A4;
+  color:#E0FBFC;
+  overflow: auto;
+  clear:left;
+}
+
+#img-container{
+  margin: 10px;
+  border: 2px solid #E0FBFC;
+  display:inline-block;
+  height:100px;
+  width:100px;
+  transform: skew(20deg);
+  overflow:hidden;
+  float:left;
+}
+
+img {
+  position:relative;
+  bottom: 10px;
+  right: 20px;
+  width: 140px;
+  height: 120px;
+  transform: skew(-20deg);
+}
+
+#name-container{
+  float:left;
+  display:inline-block;
+}
+
+#invert{
+  background-color:#E0FBFC;
+  color: #6441A4;
+  padding: 10px;
+}
+
+.border-effect{
+  border: 2px solid white;
+}

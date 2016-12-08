@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Using Twitch TV JSON Api</title>
+  
+  
+  
+      <link rel="stylesheet" href="css/style.css">
+
+  
+</head>
+
+<body>
+  <html ng-app="twitch.api.app">
+  <head>
+      <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+  </head>
+  <body ng-controller="appCtrl as app">
+    
+  <div id="content" ng-switch="newUser.info.error === undefined">
+    <div id="search">
+      <div id="search-container">
+        <span id="icon"><i class="fa fa-search" ng-click="findInfo(searchCriteria)"></i></span>
+        <input type="text" ng-model="searchCriteria" placeholder="Check on a Stream.." ng-keypress="enterPress($event.keyCode)"></input>
+      </div>
+    </div>
+    <div class="result-panel-succ" ng-switch-when="true">
+      <div id="header-container">
+        <div id="img-container">
+          <img ng-src="{{newUser.info.logo}}" class="">
+        </div>
+        <div style="display:inline-block; margin-left:10px">
+          <div id="name-container">
+            <h1>{{newUser.info.display_name}}</h1>
+          </div>
+            <h3 id="stream-online" ng-if="newUser.stream.stream !== null">Online</h3>
+            <h3 id="stream-offline" ng-if="newUser.stream.stream === null">Offline</h3>
+        </div>
+      <div ng-if="newUser.stream.stream !== null" id="invert">
+        <h3>Playing: {{newUser.stream.stream.channel.game}}</h3>
+        <a href="http://twitch.tv/{{newUser.stream.stream.channel.name}}" target="_blank">{{newUser.stream.stream.channel.status}}</a>
+        
+      </div>
+      </div>
+    </div>
+    <div id="result-panel-fail" ng-switch-when="false">
+      <h1>404</h1>
+      <p>There were no records found for the user: {{newUser.name}}</p>
+    </div>
+  </div>
+  </body>
+</html>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js'></script>
+
+    <script src="js/index.js"></script>
+
+</body>
+</html>
